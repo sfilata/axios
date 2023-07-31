@@ -11,7 +11,7 @@ function pipeFileToResponse(res, file, type) {
     });
   }
 
-  fs.createReadStream(path.join(path.resolve() ,'sandbox', file)).pipe(res);
+  fs.createReadStream(path.join(path.resolve(), 'sandbox', file)).pipe(res);
 }
 
 server = http.createServer(function (req, res) {
@@ -35,7 +35,7 @@ server = http.createServer(function (req, res) {
   } else if (pathname === '/api') {
     let status;
     let result;
-    let data = '';
+    let data = '{ "result": "success" }';
 
     req.on('data', function (chunk) {
       data += chunk;
